@@ -2,6 +2,36 @@ require_relative 'test_deps'
 
 class Song
 
+	attr_reader :artist_name, :title
+	
+	def rating=(value)
+		@updated_at = Time.now
+		@rating = value
+	end
+
+	def rating
+		return @rating
+	end
+ 	
+	def initialize(artist_name, title, rating = nil)
+		@artist_name = artist_name
+		@title = title
+		@rating = rating
+		@created_at = Time.now
+		@updated_at = @created_at
+	end
+
+	def pretty_format
+		return "#{@artist_name} - #{@title}"
+	end
+
+	def created_at
+		return @created_at
+	end
+
+	def updated_at
+		return @updated_at
+	end
 end
 
 
