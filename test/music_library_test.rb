@@ -1,6 +1,6 @@
 require 'minitest/unit'
 require 'minitest/autorun'
-require_relative '../player.rb'
+require_relative '../player/player.rb'
 
 class FancyPlaylistTest < MiniTest::Unit::TestCase
   def setup
