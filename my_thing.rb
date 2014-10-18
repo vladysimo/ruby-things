@@ -20,6 +20,8 @@ class CaptiveBear < Bear
 	end
 
 	def self.capture(bear)
+		if not bear.instance_of? CaptiveBear
+			@@tracked += 1
 		return bear
 	end
 

@@ -1,16 +1,25 @@
 require_relative 'test_deps'
 
+#yeild = autoapelare block
+# TODO: with blocks_given
+
 def love
+	if block_given?
+		"I love #{yield} super hard"
+	else
+		"Nothing"
+	end
 end
 
 def printing_result
+	puts yield
 end
 
 class BasicBlocksTest < MiniTest::Unit::TestCase
 
   def test_wrapping_a_string_in_things
     result = love do
-      "ponies"
+    	"ponies"
     end
 
     assert_equal "I love ponies super hard", result

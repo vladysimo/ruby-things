@@ -1,13 +1,30 @@
 require 'minitest/unit'
 require 'minitest/autorun'
 
+#Much fun
+#In for yield intoarce de fiecare data valoarea
+
 def doubler(array)
+	for i in array
+		yield i * 2
+	end
 end
 
 def multiplier(array, times)
+	for i in array
+		yield i * times
+	end
 end
 
 def sum(array)
+	s = 0
+	array.each { |i| s += i }
+
+	if block_given? 
+		yield s
+	else
+		s
+	end
 end
 
 class BlocksTest < MiniTest::Unit::TestCase

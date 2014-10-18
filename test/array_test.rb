@@ -12,21 +12,16 @@ class ArrayTest < MiniTest::Unit::TestCase
   end
 
   def test_summing_an_array
-    s = 0
-    @a.each { |x| s += x }
-    assert_equal 28, s
+    #inject porneste aici de la element de pe poz 0
+    assert_equal 28, @a.inject { |sum, item| sum += item }
   end
 
   def test_selecting_odd_elements_of_an_array
-    b = []
-    b.replace(@a)
-    b.keep_if { |x| x % 2 != 0 }
-    assert_equal [1,3,5,7], b
+    assert_equal [1,3,5,7], @a.select { |x| x % 2 != 0 }
   end
   
   def test_finding_first_element_divisible_by_2_and_3
-    index = @a.index { |x| x % 6 == 0 }
-    assert_equal 6, @a[index]
+    assert_equal 6, @a.find { |i| i % 6 == 0 }
   end
 
   def test_reversing_an_array

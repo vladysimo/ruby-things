@@ -24,7 +24,7 @@ end
 
 optional_block # => "I don't like you"
 
-optional_block { varza; capra; piatra; }
+optional_block { :varza; :capra; :piatra; }
 
 # => test/basic_blocks.rb
 # => blocks-2.rb
